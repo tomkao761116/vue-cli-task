@@ -60,8 +60,8 @@ const routes = [
   },
   {
     path: '/admin',
-    name: 'Dashboard',
-    component: () => import('../views/backend/Dashboard.vue'),
+    name: 'Admin 頁面',
+    component: () => import('../views/backend/Layout/Dashboard.vue'),
     children: [
       {
         path: 'products',

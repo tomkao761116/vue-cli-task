@@ -1,7 +1,12 @@
 <template>
     <div>
       <loading :active.sync="isLoading"></loading>
-        <h2>產品管理列表</h2>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <p class="h2">商品管理</p>
+          </div>
+          <div class="text-left mt-3 mb-3 pt-2 pb-2">
+            <button type="button" class="btn btn-info btn-sm" @click="openModal('new')">新增商品</button>
+          </div>
         <div id="productTable">
           <div id=header class="row font-weight-bold py-2 text-center border-bottom">
             <div class="col-2">商品名稱</div>
@@ -35,9 +40,14 @@
 </template>
 
 <script>
+import Pagination from '@/components/Pagination.vue'
+
 export default {
   name: 'Products',
   props: ['token'],
+  components: {
+    Pagination
+  },
   data () {
     return {
       products: [],
