@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: 'vue-cli-task/dist/'
+  publicPath: '/vue-cli-task/dist/'
 }
