@@ -48,7 +48,7 @@
                 <div class="form-group row text-left">
                   <label for="description" class="col-sm-3 col-form-label text-muted"><strong>商品描述</strong></label>
                   <div class="col-sm-9 ">
-                    <p id="description" class="text-sensaicha">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit suscipit nam ducimus nesciunt quod expedita atque laboriosam, hic ad illum officiis aspernatur, itaque laborum est! Eum quo at ipsum distinctio.</p>
+                    <p id="description" class="text-sensaicha">{{product.description}}</p>
                   </div>
                 </div>
               </div>
