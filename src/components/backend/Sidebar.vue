@@ -6,7 +6,7 @@
           <li class="nav-item">
             <router-link
               class="nav-link active"
-              :to="{ name: '產品頁面'}"
+              :to="{ name: 'backendProducts'}"
             >
               商品管理
             </router-link>
@@ -14,7 +14,7 @@
           <li class="nav-item">
             <router-link
               class="nav-link"
-              :to="{ name: '優惠券'}"
+              :to="{ name: 'Coupons'}"
             >
               優惠卷列表
             </router-link>
@@ -22,7 +22,7 @@
           <li class="nav-item">
             <router-link
               class="nav-link"
-              :to="{ name: '訂單列表'}"
+              :to="{ name: 'Orders'}"
             >
               訂單列表
             </router-link>
