@@ -149,11 +149,11 @@
 </template>
 
 <script>
+import $ from 'jquery'
 import Pagination from '@/components/Pagination.vue'
 
 export default {
   name: 'Products',
-  props: ['token'],
   components: {
     Pagination
   },
@@ -179,7 +179,6 @@ export default {
     // 取得商品清單
     getProducts (page = 1) {
       this.isLoading = true
-      console.log(this.uuid)
       const apiUrl = `${process.env.VUE_APP_APIPATH}api/${this.uuid}/admin/ec/products?page=${page}`
       this.$http.get(apiUrl) // http 前面加 $ 字號，是為了跟我們自己訂的方法產生衝突
         .then((res) => {

@@ -5,7 +5,7 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <router-link
-              class="nav-link active"
+              class="nav-link"
               :to="{ name: 'backendProducts'}"
             >
               商品管理
@@ -25,6 +25,14 @@
               :to="{ name: 'Orders'}"
             >
               訂單列表
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link"
+              :to="{ name: 'Images'}"
+            >
+              圖片列表
             </router-link>
           </li>
         </ul>
