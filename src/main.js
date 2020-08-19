@@ -18,6 +18,8 @@ import 'vue-loading-overlay/dist/vue-loading.css'
 
 // Bus
 import './bus'
+// Import VueCookies
+import VueCookies from 'vue-cookies'
 
 import App from './App.vue'
 import router from './router'
@@ -33,6 +35,8 @@ Vue.config.productionTip = false
 
 Vue.use(Loading)
 Vue.component('Loading', Loading)
+
+Vue.use(VueCookies)
 
 // vee-validate
 Object.keys(rules).forEach((rule) => {
