@@ -20,7 +20,9 @@
           <div :id="item.id" class="row py-2 text-center border-bottom " v-for="(item) in products" :key="item.id">
             <div class="col-2 mt-auto mb-auto">{{ item.title }}</div>
             <div class="col mt-auto mb-auto">{{ item.category }}</div>
-            <div class="col-3 text-left mt-auto mb-auto">{{ item.content }}</div>
+            <div class="col-3 text-left mt-auto mb-auto">
+              <p v-html="item.content"></p>
+            </div>
             <div class="col mt-auto mb-auto">{{ item.origin_price }}</div>
             <div class="col mt-auto mb-auto">{{ item.price }}</div>
             <div class="col mt-auto mb-auto">
@@ -89,8 +91,10 @@
                   </div>
                   <div class="form-group">
                     <label for="productContent">商品內容</label>
-                    <textarea id="productContent" class="form-control" placeholder="請輸入商品內容"
-                      v-model="tempProduct.content"></textarea>
+                    <vue-editor
+                      id="productContent"
+                      v-model="tempProduct.content"
+                    />
                   </div>
                   <div class="form-group">
                     <div class="form-check">
@@ -150,11 +154,13 @@
 
 <script>
 import $ from 'jquery'
+import { VueEditor } from 'vue2-editor/dist/vue2-editor.core'
 import Pagination from '@/components/Pagination.vue'
 
 export default {
   name: 'Products',
   components: {
+    VueEditor,
     Pagination
   },
   data () {
@@ -304,3 +310,12 @@ export default {
   }
 }
 </script>
+
+<style lang="css">
+@import '~vue2-editor/dist/vue2-editor.css';
+
+/* Import the Quill styles you want */
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.bubble.css';
+@import '~quill/dist/quill.snow.css';
+</style>

@@ -1,38 +1,70 @@
+/* heade */
+.blog-header {
+    line-height: 1;
+}
+
+
+.blog-header-logo:hover {
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .display-4 {
+        font-size: 3rem;
+    }
+}
+
+.nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-item.nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+}
+
+.ag-item {
+    width: 144px;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+    .h-md-250 { height: 250px; }
+}
+
 
 .jumbotron-image {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
-    background-image: url(/main_image.jpg);
+    background-image: url(../assets/imgs/main_image.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: .3rem
 }
 
-.text-sensaicha {
-    color:#4D5139 ;
-}
-
-a.text-sensaicha:hover {
-    color: #89916B;
-    text-decoration: underline
-}
-
 .orignal-price {
     text-decoration:line-through;
 }
-
-
 
 /*
  * Footer
  */
 .my-footer {
     padding: 2.5rem 0;
-    color: #999;
+    margin-top: 2.5rem;
+    color: #4b4e3b;
     text-align: center;
     background-color: #f9f9f9;
-    border-top: .05rem solid #e5e5e5;
 }
 
 .my-footer p:last-child {
@@ -157,9 +189,193 @@ text-transform: uppercase;
 }
 
 .productTitle, .productPrice {
-    min-height: 50px;
+    min-height: 30px;
 }
 
 .productContent {
     min-height: 300px;
+}
+
+.badge.custom-badge {
+    border-radius: 0.5rem;
+    position: relative;
+    left: -5px;
+    top: 2px;
+    background-color:#E16B8C;
+    color: #f9f9f9;
+}
+
+/* Remove Arrows/Spinners */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+/* Firefox */
+input[type=number] {
+-moz-appearance: textfield;
+}
+
+.numbox .numbox-input.form-control {
+    width: 50px;
+    border-radius: 8px;
+}
+
+#cartTable {
+    border: 1px solid #eeeee4ec;
+    border-radius: 5px 5px 0px 0px
+}
+
+#sumTable {
+    background-color: #eeeee4ec
+}
+
+/* progressBar */
+#progressBar {
+    min-height: 80px;
+}
+.progressbar {
+    counter-reset: step;
+}
+.progressbar li {
+    list-style-type: none;
+    width: 32%;
+    float: left;
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: #BDC0BA;
+}
+.progressbar li:before {
+    width: 30px;
+    height: 30px;
+    content: counter(step);
+    counter-increment: step;
+    line-height: 30px;
+    border: 2px solid #BDC0BA;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+}
+.progressbar li:after {
+    width: 100%;
+    height: 2px;
+    content: '';
+    position: absolute;
+    background-color: #BDC0BA;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+.progressbar li:first-child:after {
+    content: none;
+}
+.progressbar li.active {
+    color: #A5A051;
+}
+.progressbar li.active:before {
+    border-color: #A5A051;
+}
+.progressbar li.active + li:after {
+    background-color: #A5A051;
+}
+
+.noContentBox {
+    min-height: 150px;
+}
+
+/* image hover effect */
+.imagetoHover {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: 275px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.imagetoHover-sm {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: 230px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middleButton {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: none;
+}
+
+.card:hover .imagetoHover, .card:hover .imagetoHover-sm {
+    opacity: 0.3;
+}
+
+.card:hover .middleButton {
+    opacity: 1;
+    
+}
+
+.hoverText {
+    background-color: #a6a7a4;
+    border-radius: 2px;
+    color: white;
+    font-size: 14px;
+    padding: 6px 12px;
+}
+
+#productDescription .form-group {
+    min-height: 80px;
+}
+
+#centralPicture .aboutUsImg {
+    position: absolute;
+    top: 260px;
+    width: 65%;
+    height: 55%;
+    object-fit: cover;
+
+}
+
+#aboutUsInfo {
+    min-height: 400px;
+}
+
+#centralPicture .text-wrap {
+    background-color: #9da094;
+    padding: 2rem 3rem;
+    color:#f9f9f9;
+}
+
+#typeSideBar .list-group-item {
+    border-radius: 0;
+    border: none;
+    border-bottom: 0.3px solid #9da094 ;
+}
+
+#typeSideBar .list-group-item a {
+    color: #616646;
+}
+
+
+.card-ag {
+    border: none;
+}
+
+.card-img {
+    text-align: center;
+    flex-shrink: 0;
+    margin-bottom: 30px;
 }

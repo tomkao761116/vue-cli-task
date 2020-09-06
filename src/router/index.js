@@ -41,14 +41,14 @@ const routes = [
         component: () => import('../views/frontend/Cart.vue')
       },
       {
-        path: '/checkout',
-        name: 'CheckOut',
-        component: () => import('../views/frontend/CheckOut.vue')
+        path: '/order',
+        name: 'Order',
+        component: () => import('../views/frontend/Order.vue')
       },
       {
-        path: '/confirmorder',
-        name: 'ConfirmOrder',
-        component: () => import('../views/frontend/ConfirmOrder.vue')
+        path: '/checkout/:orderId',
+        name: 'CheckOut',
+        component: () => import('../views/frontend/CheckOut.vue')
       }
     ]
   },
@@ -91,7 +91,15 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  // 設定每次 router change 自動返回頁面頂端
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
 
 export default router

@@ -20,23 +20,32 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/main";
+
+body {
+    color: #5f6456;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 
 #nav {
-  padding: 30px;
+  margin-bottom:20px ;
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    text-decoration: none;
+    color: #5f6456;
+
+    &:hover {
+      color:#a6a7a4 ;
+    }
 
     &.router-link-exact-active {
-      color: #42b983;
+      font-weight:bold;
+      border-bottom: 2px solid #5f645691;
     }
   }
 }

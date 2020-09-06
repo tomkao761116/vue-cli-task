@@ -16,6 +16,11 @@ import Loading from 'vue-loading-overlay'
 // Import stylesheet
 import 'vue-loading-overlay/dist/vue-loading.css'
 
+// Import vue-awesome-swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// require styles
+import 'swiper/css/swiper.css'
+
 // Bus
 import './bus'
 // Import VueCookies
@@ -23,6 +28,9 @@ import VueCookies from 'vue-cookies'
 
 import App from './App.vue'
 import router from './router'
+import currencyFilter from './filters/currency'
+import dateFilter from './filters/date'
+
 import '../src/assets/all.css'
 
 window.$ = jquery
@@ -33,10 +41,14 @@ Vue.use(VueRouter)
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
+Vue.filter('currency', currencyFilter)
+Vue.filter('date', dateFilter)
+
 Vue.use(Loading)
 Vue.component('Loading', Loading)
 
 Vue.use(VueCookies)
+Vue.use(VueAwesomeSwiper)
 
 // vee-validate
 Object.keys(rules).forEach((rule) => {

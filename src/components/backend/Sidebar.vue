@@ -35,6 +35,14 @@
               圖片列表
             </router-link>
           </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link"
+              :to="{ name: 'Index'}"
+            >
+              回到前台
+            </router-link>
+          </li>
         </ul>
       </div>
     </nav>
