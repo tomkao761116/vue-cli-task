@@ -4,10 +4,10 @@
         <main role="main" class="mt-5">
           <section class="centralPicture row justify-content-center align-items-center">
             <!-- 中央大圖 -->
-            <div class="jumbotron jumbotron-image" style="height:400px;">
+            <div class="jumbotron jumbotron-image">
               <div class="col-md-7">
                 <div class="px-5 py-3 text-left">
-                  <h1 class="display-5 font-weight-bold">在繁忙的日常中，尋找片刻的寧靜</h1>
+                  <h2 class="display-5 font-weight-bold">在繁忙的日常中，尋找片刻的寧靜</h2>
                 <p class="lead my-3">擁有一盆多肉，為自己的心靈灌溉。從成堆的事務裡暫時抽離，拔除名為"煩惱"的雜草。讓心情平和、沉澱，找回遠離已久，平靜的自我。</p>
                 <div class="text-right">
                   <router-link to="/products"><h5 class="d-inline">找尋心靈之友 >></h5></router-link>

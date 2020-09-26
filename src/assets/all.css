@@ -45,6 +45,10 @@
     min-height: 100%;
 }
 
+.jumbotron {
+    height:400px; 
+}
+
 .jumbotron-image {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
