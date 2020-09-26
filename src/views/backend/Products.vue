@@ -7,8 +7,8 @@
       <div class="text-left mt-3 mb-3 pt-2 pb-2">
         <button type="button" class="btn btn-info btn-sm" @click="openModal('new')">新增商品</button>
       </div>
-      <div id="productTable">
-          <div id=header class="row font-weight-bold py-2 text-center border-bottom">
+      <div class="productTable">
+          <div class="header row font-weight-bold py-2 text-center border-bottom">
             <div class="col-2">商品名稱</div>
             <div class="col">商品分類</div>
             <div class="col-3">商品描述</div>
@@ -188,7 +188,6 @@ export default {
       const apiUrl = `${process.env.VUE_APP_APIPATH}api/${this.uuid}/admin/ec/products?page=${page}`
       this.$http.get(apiUrl) // http 前面加 $ 字號，是為了跟我們自己訂的方法產生衝突
         .then((res) => {
-          console.log(res)
           this.products = res.data.data // 把產品列表資料綁進 products [] 陣列裡頭
           this.pagination = res.data.meta.pagination
           this.isLoading = false
@@ -203,8 +202,6 @@ export default {
         // eslint-disable-next-line no-undef
         $('#productInfo').modal('show')
         this.isLoading = false
-      }).catch((err) => {
-        console.log(err)
       })
     },
     // 開啟  Modal

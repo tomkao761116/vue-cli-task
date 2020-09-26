@@ -38,7 +38,6 @@ export default {
   created () {
     this.token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1')
     // 取得 token
-    console.log(this.token)
     const apiUrl = `${process.env.VUE_APP_APIPATH}api/auth/check`
     this.$http.defaults.headers.common.Authorization = `Bearer ${this.token}`
     this.$http.post(apiUrl, {
@@ -46,7 +45,6 @@ export default {
     })
       .then((res) => {
       // 登入沒有問題
-        console.log(res)
         if (res.data.success) {
           this.checkSuccess = true
         }

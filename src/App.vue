@@ -22,14 +22,25 @@ export default {
 <style lang="scss">
 @import "./assets/main";
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
+    height: 100%;
+    margin: 0 0 150px;
     color: #5f6456;
 }
 
 #app {
+  min-height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  a {
+    text-decoration: none;
+  }
 }
 
 #nav {

@@ -3,10 +3,9 @@
     <loading :active.sync="isLoading"></loading>
     <div class="container">
       <main role="main" class="mt-5">
-        <div class="container">
-          <!-- 商品列表 -->
+        <!-- 商品列表 -->
           <div class="row position-relative">
-            <nav id="typeSideBar" class="col-md-3">
+            <nav class="typeSideBar col-md-3">
               <ul
                 class="list-group sticky-top"
               >
@@ -15,7 +14,7 @@
                     data-toggle="tab"
                     href="#"
                     class="list-btn active"
-                    @click.prevent="getFilter(filterType = 'All')"
+                    @click.prevent="filterType = ''"
                   >全部商品</a>
                 </li>
                 <li class="list-group-item p-xy-0">
@@ -23,7 +22,7 @@
                     data-toggle="tab"
                     href="#"
                     class="list-btn"
-                    @click.prevent="getFilter(filterType = '多肉植物')"
+                    @click.prevent="filterType = '多肉植物'"
                   >多肉植物</a>
                 </li>
                 <li class="list-group-item p-xy-0">
@@ -31,7 +30,7 @@
                     data-toggle="tab"
                     href="#"
                     class="list-btn"
-                    @click.prevent="getFilter(filterType = '觀葉植物')"
+                    @click.prevent="filterType = '觀葉植物'"
                   >觀葉植物</a>
                 </li>
                 <li class="list-group-item p-xy-0">
@@ -39,13 +38,13 @@
                     data-toggle="tab"
                     href="#"
                     class="list-btn"
-                    @click.prevent="getFilter(filterType = '香草植物')"
+                    @click.prevent="filterType = '香草植物'"
                   >香草植物</a>
                 </li>
               </ul>
             </nav>
-            <div id="productsList" class="col-md-9">
-              <h4 class="dispaly-5 text-left" v-if="filterType === 'All' | !filterType">
+            <div class="productsList col-md-9">
+              <h4 class="dispaly-5 text-left" v-if="filterType === ''">
                 全部商品
               </h4>
               <h4 class="dispaly-5 text-left" v-else>
@@ -54,36 +53,40 @@
               <hr>
               <div class="row justify-content-start">
                 <!-- 單項商品 Card -->
-                <div class="col-md-4" v-for="(item) in filterProducts" :key="item.id">
-                  <div class="card mb-4 shadow-sm" :data-id="item.id">
-                  <img class="bd-placeholder-img card-img-top imagetoHover" :src="item.imageUrl[0]"
-                      alt="商品圖片">
-                      <div class="middleButton"><router-link :to="`/product/${ item.id }`">
-                        <div class="hoverText">查看商品</div>
-                      </router-link></div>
-                    <div class="card-body">
-                      <p class="productTitle text-left font-weight-bold">{{ item.title }}</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="price-group">
-                          <small class="orignal-price text-muted mr-1">NT. <span>{{ item.origin_price | currency }}</span></small>
-                          <span class="activity-price">NT. <span>{{ item.price | currency }}</span></span>
+                <div class="col-lg-4 col-md-6" v-for="(item) in getFilter" :key="item.id">
+                  <router-link :to="`/product/${ item.id }`">
+                    <div class="card mb-4 shadow-sm" :data-id="item.id">
+                      <div class="card-img-top imagetoHover" :style="{ backgroundImage:`url(${ item.imageUrl[0] })` }"
+                      ></div>
+                        <div class="middleButton">
+                          <div class="hoverText">查看商品</div>
                         </div>
-                        <div class="action-group">
-                          <span data-toggle="tooltip" title="加入購物車"><a href="#" class="p-1" @click.prevent="addtoCart(item.id)"><i
-                      class="fas fa-shopping-cart"></i></a></span>
+                      <div class="card-body">
+                        <h6 class="productTitle text-left font-weight-bold">{{ item.title }}</h6>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <div class="price-group">
+                            <h6 class="orignal-price text-muted mr-1"><small >NT{{ item.origin_price | currency }}</small></h6>
+                            <h6 class="activity-price">NT{{ item.price | currency }}</h6>
+                          </div>
+                          <div class="action-group">
+                            <span data-toggle="tooltip" title="加入購物車">
+                              <a href="#" class="p-1" @click.prevent="addtoCart(item.id)">
+                                <i class="fas fa-shopping-cart"></i>
+                              </a>
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </router-link>
                 </div>
                 <div class="col-md-12 d-flex justify-content-center">
-                  <pagination :pages="pagination" class=" mt-4" @emit-pages="getProducts"></pagination>
+                  <pagination :pages="pagination" class=" mt-4" @emit-pages="getProducts" v-if="products.length >= 25"></pagination>
                 </div>
               </div>
             </div>
           </div>
           <!-- End 商品列表 -->
-        </div>
       </main>
     </div>
   </div>
@@ -119,7 +122,6 @@ export default {
         .then((res) => {
           this.isLoading = false
           this.products = res.data.data // 把產品列表資料綁進 products [] 陣列裡頭
-          this.filterProducts = this.products
           this.pagination = res.data.meta.pagination
           const { categoryName } = this.$route.params
           if (categoryName) {
@@ -153,25 +155,26 @@ export default {
             'danger')
         })
       })
-    },
+    }
+  },
+  computed: {
     getFilter () {
+      let filterProducts = []
       switch (this.filterType) {
-        case 'All':
-          this.filterProducts = this.products
-          break
         case '多肉植物':
-          this.filterProducts = this.products.filter((item) => item.category === '多肉植物')
-          console.log(this.filterProducts)
+          filterProducts = this.products.filter((item) => item.category === '多肉植物')
           break
         case '觀葉植物':
-          this.filterProducts = this.products.filter((item) => item.category === '觀葉植物')
+          filterProducts = this.products.filter((item) => item.category === '觀葉植物')
           break
         case '香草植物':
-          this.filterProducts = this.products.filter((item) => item.category === '香草植物')
+          filterProducts = this.products.filter((item) => item.category === '香草植物')
           break
         default:
+          filterProducts = this.products
           break
       }
+      return filterProducts
     }
   }
 }

@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="main-area">
     <loading :active.sync="isLoading"></loading>
       <div class="container">
         <main role="main" class="my-4">
-          <section id="centralPicture" class="row justify-content-start align-items-center">
+          <section class="centralPicture row justify-content-start align-items-center pb-5">
             <!-- 中央大圖 -->
             <img class="aboutUsImg" src="../../assets/imgs/aboutUsImg.jpg" alt="Mobirise">
             <div class="container">
@@ -23,15 +23,28 @@
               </div>
             </div>
           </section>
-          <section id="aboutUsInfo" class="row justify-content-center align-items-center mt-5">
+          <div class="my-5"></div>
+          <section class="aboutUsInfo row justify-content-center align-items-center pt-5">
             <!-- 左邊聯絡資訊 -->
-            <div id="contactUs" class="col-md-6 p-5 text-left">
-              <h5 class="text-center">聯絡我們</h5>
-              <hr>
-              <p class="my-3">Aiden 跟他的好夥伴們沒事的時候很愛到處亂跑，但多半會出現在花花草草聚集的地區，歡迎透過以下方式聯絡我們</p>
-              <p>聯絡電話：0910234567</p>
-              <p>活動時間：週六、週日 10:00 ~ 18:00</p>
-              <p>活動地點：哪裡綠的讓你覺得很舒服，就往那找找看吧，Aiden 或許就在那兒！</p>
+            <div id="contactUs" class="col-md-6">
+              <div class="contactUs p-5  text-left">
+                <h5 class="text-center">聯絡我們</h5>
+                <hr>
+                <ul class="contactUsContent">
+                  <li>
+                    <p class="my-3">Aiden 跟他的好夥伴們沒事的時候很愛到處亂跑，但多半會出現在花花草草聚集的地區，歡迎透過以下方式聯絡我們</p>
+                  </li>
+                  <li>
+                    <p>聯絡電話：0910234567</p>
+                  </li>
+                  <li>
+                    <p>活動時間：週六、週日 10:00 ~ 18:00</p>
+                  </li>
+                  <li>
+                    <p>活動地點：哪裡綠的讓你覺得很舒服，就往那找找看吧，Aiden 或許就在那兒！</p>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div id="findUs" class="col-md-6 p-3">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.7597095552563!2d121.50803282920387!3d25.032755998998304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAxJzU3LjkiTiAxMjHCsDMwJzMwLjkiRQ!5e0!3m2!1szh-TW!2stw!4v1598881043974!5m2!1szh-TW!2stw" width="400" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>

@@ -168,27 +168,6 @@
       </div>
     </div>
     <!-- End CouponInfo -->
-    <!-- DelCoupon -->
-    <!-- <div class="modal" id="delOrder" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-          <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title">刪除優惠券</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <div class="modal-body">
-              <p>執行後，<strong>{{ tempOrder.item }}</strong>將被刪除，此動作將無法恢復，確認要執行刪除？</p>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-              <button type="button" class="btn btn-danger" @click="delOrder">確認刪除</button>
-          </div>
-          </div>
-      </div>
-    </div> -->
-    <!-- End DelCoupon -->
   </div>
 </template>
 
@@ -253,12 +232,8 @@ export default {
 
       this.$http.get(url).then((response) => {
         this.order = response.data.data
-        console.log(this.order)
-        console.log(this.order.products)
         this.order.products.forEach(item => {
-          console.log(item.quantity)
           this.totalQuantity += item.quantity
-          console.log(this.totalQuantity)
         })
         this.isLoading = false
       })

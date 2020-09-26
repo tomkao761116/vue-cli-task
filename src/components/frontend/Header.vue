@@ -9,9 +9,9 @@
             <router-link to="/" class="blog-header-logo"><img class="img-responsive" src="../../assets/imgs/logo.png" alt="Aiden's Garden"></router-link>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
-            <span data-toggle="tooltip" title="查看購物車"><router-link to="/cart" class="text-sensaicha p-2 ml-2 mr-2"><i
+            <span data-toggle="tooltip" title="查看購物車"><router-link to="/cart" class="p-2 ml-2 mr-2"><i
                   class="fas fa-shopping-cart fa-lg"></i>
-                  <span class="badge custom-badge">
+                  <span v-if="cart!==0" class="badge custom-badge">
                     {{ cart }}
                   </span>
                   </router-link></span>

@@ -6,7 +6,6 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/', // path 這個路徑是自己定義的
-    name: 'Home',
     component: () => import('../views/frontend/Home.vue'),
     children: [
       {
@@ -49,6 +48,14 @@ const routes = [
         path: '/checkout/:orderId',
         name: 'CheckOut',
         component: () => import('../views/frontend/CheckOut.vue')
+      },
+      {
+        path: '/purchaseSuccessful/:orderId',
+        name: 'PurchaseSuccessful',
+        component: () => import('../views/frontend/PurchaseSuccessful.vue')
+      },
+      {
+        path: '*', redirect: '/'
       }
     ]
   },

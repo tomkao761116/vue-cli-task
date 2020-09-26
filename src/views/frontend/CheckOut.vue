@@ -4,56 +4,53 @@
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div class="col-sm-10 align-self-center">
-            <div id="progressBar" class="my-3">
-              <ul class="progressbar">
+            <div class="progressBar my-3">
+              <ul class="progressBarList">
                 <li class="active">確認購物車</li>
                 <li class="active">填寫訂購資料</li>
-                <li class="active">確認訂單並結帳</li>
+                <li class="active">確認訂單並付款</li>
+                <li >付款成功</li>
               </ul>
             </div>
           </div>
         </div>
         <div  class="row d-flex justify-content-center">
           <div class="col-md-10 col-sm-12 border">
-            <div id="cartTable" class="row d-flex justify-content-between " v-for="(item, key) in order.products"
+            <div class="cartTable row d-flex justify-content-between " v-for="(item, key) in order.products"
             :key="key">
-              <div class="col-6 d-flex justify-content-start align-items-center" style="height: 80px;">
-                {{ item.product.title }}</div>
-              <div class="col-3 d-flex justify-content-center align-items-center" style="height: 80px;">
+              <div class="col-content col-6 d-flex justify-content-start align-items-center" >
+                <div class="pl-3">
+                  {{ item.product.title }}
+                </div>
+              </div>
+              <div class="col-content col-3 d-flex justify-content-center align-items-center">
                 {{ item.quantity }} {{ item.product.unit }}
               </div>
-              <div class="col-3 d-flex justify-content-end align-items-center" style="height: 80px;">
-                NT. {{ item.product.price | currency }}</div>
-            </div>
-            <div :id="item.id" class="row d-flex justify-content-between" v-for="(item) in products"
-              :key="item.id">
-              <div class="col-6 d-flex justify-content-start align-items-center" style="height: 50px;">
-                {{ item.title }}</div>
-              <div class="col-3 d-flex justify-content-center align-items-center" style="height: 50px;">
-                {{ 數量 }} {{ 單位 }}
+              <div class="col-content col-3 d-flex justify-content-end align-items-center">
+                <div class="pr-3">
+                  NT{{ item.product.price | currency }}
+                </div>
               </div>
-              <div class="col-3 d-flex justify-content-end align-items-center" style="height: 50px;">
-                {{ item.origin_price }}</div>
             </div>
           </div>
           <div class="col-md-10 col-sm-12" style="background-color:bisque">
-            <div id="sumTable" class="row d-flex justify-content-end">
+            <div class="sumTable row d-flex justify-content-end">
               <div class="col-md-6 d-flex justify-content-end align-items-start pt-3 pb-2">
                 <table class="table text-right text-primary">
                   <tbody>
                     <tr>
-                      <td scope="col" class="border-top-0">
+                      <td scoped="col" class="border-top-0">
                         共 {{ quantityTatol }} 件商品
                       </td>
-                      <td scope="col" class="border-top-0">商品金額</td>
-                      <td scope="col" class="border-top-0">
-                        NT. {{ order.amount | currency }}
+                      <td scoped="col" class="border-top-0">商品金額</td>
+                      <td scoped="col" class="border-top-0">
+                        NT{{ order.amount | currency }}
                       </td>
                     </tr>
                     <tr class="text-danger">
-                      <td scope="col" class="border-top-0"></td>
-                      <td scope="col" class="border-top-0">優惠券</td>
-                      <td scope="col" class="border-top-0">
+                      <td scoped="col" class="border-top-0"></td>
+                      <td scoped="col" class="border-top-0">優惠券</td>
+                      <td scoped="col" class="border-top-0">
                         <span v-if="isEnabled">
                           {{ order.coupon.title }}
                         </span>
@@ -63,26 +60,26 @@
                       </td>
                     </tr>
                     <tr>
-                      <td scope="col" class="border-top-0"></td>
-                      <td scope="col" class="border-top-0">運費</td>
-                      <td scope="col" class="border-top-0">
+                      <td scoped="col" class="border-top-0"></td>
+                      <td scoped="col" class="border-top-0">運費</td>
+                      <td scoped="col" class="border-top-0">
                         <span v-if="order.amount >= 999">
-                          NT.  {{ 0 | currency }}
+                          NT{{ 0 | currency }}
                           </span>
                           <span v-else>
-                          NT. {{ 80 | currency }}
+                          NT{{ 80 | currency }}
                           </span>
                       </td>
                     </tr>
                     <tr>
-                      <td scope="col"></td>
-                      <td scope="col">總計</td>
-                      <td scope="col" class="text-danger">
+                      <td scoped="col"></td>
+                      <td scoped="col">總計</td>
+                      <td scoped="col" class="text-danger">
                         <span v-if="order.amount >= 999">
-                          NT. {{ order.amount | currency }}
+                          NT{{ order.amount | currency }}
                         </span>
                         <span v-else>
-                          NT. {{ order.amount + 80 | currency }}
+                          NT{{ order.amount + 80 | currency }}
                         </span>
                       </td>
                     </tr>
@@ -96,7 +93,7 @@
               <div class="col-md-12 justify-content-start align-items-center pl-0 pr-0">
                 <ul class="list-group" style="border-radius: 0;">
                   <li class="list-group-item text-left">
-                    <h5>訂購資訊</h5>
+                    <h5 class="py-3">訂購資訊</h5>
                     <table class="table text-primary">
                       <tbody>
                         <tr>
@@ -172,19 +169,9 @@
             </div>
             <div class="fnbar row d-flex justify-content-center align-items-center mt-3" v-if="order.paid === false">
               <div class="col-xs-4 d-flex justify-content-end align-items-center pr-3" >
-                <button class="btn btn-primary" @click.prevent="payOrder"
-                :disabled="isProcessing">
-                  <i class="fas fa-spinner fa-spin"
-                    v-if="isProcessing">
-                  </i>確認付款
+                <button class="btn btn-primary" @click.prevent="payOrder">
+                  確認付款
                 </button>
-              </div>
-            </div>
-            <div class="fnbar row d-flex justify-content-center align-items-center mt-3" v-if="order.paid === true">
-              <div class="col-xs-4 d-flex justify-content-end align-items-center pr-3" >
-                <router-link to="/products" class="btn btn-primary" >
-                  返回商品頁面
-                </router-link>
               </div>
             </div>
           </div>
@@ -252,10 +239,12 @@ export default {
       this.$http.post(url)
         .then((res) => {
           if (res.data.data.paid) {
+            this.$bus.$emit('update-total')
             this.getOrder()
             this.$bus.$emit('message:push',
               '付款成功',
               'success')
+            this.$router.push(`/purchaseSuccessful/${this.orderId}`)
           }
           this.isProcessing = false
         }).catch((err) => {

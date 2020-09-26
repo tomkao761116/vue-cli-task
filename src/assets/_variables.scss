@@ -76,12 +76,12 @@ $dark:          $gray-800 !default;
 $theme-colors: () !default;
 $theme-colors: map-merge(
   (
-    "primary":    #76835f,
+    "primary":   #636d51,
     "secondary":  #d0dfc2,
     "success":    #5DAC81,
     "info":       $info,
     "warning":    $warning,
-    "danger":     #d44f75,
+    "danger":     #ad4663,
     "light":      $light,
     "dark":       $dark
   ),

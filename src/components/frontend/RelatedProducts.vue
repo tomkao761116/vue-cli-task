@@ -1,32 +1,34 @@
 <template>
   <div>
     <Swiper ref="mySwiper" :options="swiperOption">
-      <swiper-slide class="col-md-3"
+      <swiper-slide
         v-for="item in related"
         :key="item.id"
       >
         <!-- 單項商品 Card -->
+        <a href="#" @click.prevent="switchProduct(item.id)">
           <div class="card mb-4 shadow-sm">
-            <img class="bd-placeholder-img card-img-top imagetoHover-sm" :src="item.imageUrl[0]"
-              alt="商品圖片">
+            <div class="card-img-top imagetoHover" :style="{ backgroundImage:`url(${ item.imageUrl[0] })` }"
+                      ></div>
             <div class="middleButton">
-              <a href="#" @click.prevent="switchProduct(item.id)">
                 <div class="hoverText">查看商品</div>
-              </a>
             </div>
             <div class="card-body">
               <p class="productTitle text-left text-sensaicha font-weight-bold">{{ item.title }}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="price-group">
-                  <small class="orignal-price text-muted mr-1">NT. <span>{{ item.origin_price | currency }}</span></small>
-                  <span class="activity-price text-sensaicha">NT. <span>{{ item.price | currency }}</span></span>
+                  <small class="orignal-price text-muted mr-1">NT<span>{{ item.origin_price | currency }}</span></small>
+                  <span class="activity-price text-sensaicha">NT<span>{{ item.price | currency }}</span></span>
                 </div>
               </div>
             </div>
           </div>
+        </a>
       </swiper-slide>
       <!-- Optional controls -->
       <div class="swiper-pagination" slot="pagination"></div>
+      <div class="swiper-button-prev" slot="button-prev"></div>
+      <div class="swiper-button-next" slot="button-next"></div>
     </Swiper>
   </div>
 </template>
@@ -41,15 +43,20 @@ export default {
       products: [],
       uuid: process.env.VUE_APP_UUID,
       swiperOption: {
+        setWrapperSize: true,
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
           dynamicBullets: true
         },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
         breakpoints: {
           1024: {
             slidesPerView: 4,
-            spaceBetween: 30
+            spaceBetween: 40
           },
           768: {
             slidesPerView: 3,

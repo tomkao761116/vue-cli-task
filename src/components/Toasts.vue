@@ -16,7 +16,7 @@
           style="width: 20px; height: 20px"
           :class="`bg-${ item.status }`"
         />
-        <strong class="mr-auto">系統訊息</strong>
+        <strong class="mr-auto">Aiden 說：</strong>
         <button
           type="button"
           class="ml-2 mb-1 close"
