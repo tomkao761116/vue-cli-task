@@ -199,7 +199,6 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}api/${this.uuid}/admin/ec/product/${id}`
       this.$http.get(api).then((res) => {
         this.tempProduct = res.data.data
-        // eslint-disable-next-line no-undef
         $('#productInfo').modal('show')
         this.isLoading = false
       })

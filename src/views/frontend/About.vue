@@ -3,20 +3,21 @@
     <loading :active.sync="isLoading"></loading>
       <div class="container">
         <main role="main" class="my-4">
-          <section class="centralPicture row justify-content-start align-items-center pb-5">
+          <section class="centralPicture row justify-content-start align-items-center pb-3">
             <!-- 中央大圖 -->
             <img class="aboutUsImg" src="../../assets/imgs/aboutUsImg.jpg" alt="Mobirise">
             <div class="container">
               <div class="row justify-content-md-end">
                 <div class="col-lg-6 col-md-12">
-                  <h2 class="align-right pb-4 pr-4 text-right display-1">
-                    <div>Aiden's<br>Garden</div>
+                  <h2 class="align-right pb-4 pr-4 display-1">
+                    <div class="text-left">Aiden's</div>
+                    <div class="text-right">Garden</div>
                   </h2>
                   <div class="text-wrap text-left">
                     <h5 class="pb-2 align-start display-5">「植物也可以是人類最忠實的朋友」</h5>
                     <h5 class="pb-2 pr-3 text-right display-5"> ─ By Aiden</h5>
-                    <p>
-                      Aiden 是位被程式耽誤的夢想家，覺得人生不該成天坐在電腦前加班，就算加班也要加的很愉快。原本只是想讓堆滿文件的辦公桌面、填滿程式碼的電腦桌面，增添點綠色氣息，看著也療癒。不知何時，開始會對著桌上的多肉訴說日常生活，好像多了個朋友似的，疲憊的心靈也稍微被補充了點能量。他覺得，應該讓這些能量散播出去，溫暖大家的心。
+                    <p class="mb-0">
+                      Aiden 覺得，人生不該成天坐在電腦前加班，原本只是想讓堆滿文件的辦公桌面、填滿程式碼的電腦桌面，增添點綠色氣息，看著也療癒。不知何時，開始會對著桌上的多肉訴說日常生活，好像多了個朋友似的，疲憊的心靈也稍微被補充了點能量。他覺得，應該讓這些能量散播出去，溫暖大家的心。
                     </p>
                   </div>
                 </div>
@@ -24,7 +25,7 @@
             </div>
           </section>
           <div class="my-5"></div>
-          <section class="aboutUsInfo row justify-content-center align-items-center pt-5">
+          <section class="aboutUsInfo row justify-content-center align-items-center pt-3">
             <!-- 左邊聯絡資訊 -->
             <div id="contactUs" class="col-md-6">
               <div class="contactUs p-5  text-left">

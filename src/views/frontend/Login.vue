@@ -34,7 +34,6 @@ export default {
       this.$http.post(apiUrl, this.user).then((response) => { // 接收 api 回傳的 token 及 效期
         const token = response.data.token
         const expired = response.data.expired
-        console.log(token, expired)
         // 將收到的資訊寫進 cookie
         document.cookie = `token=${token}; expires=${new Date(expired * 1000)};`
         // 跳出提示視窗
@@ -43,7 +42,6 @@ export default {
           'success')
         this.isLoading = false
         this.$router.push('/admin/products')
-      // eslint-disable-next-line handle-callback-err
       }).catch((error) => {
         this.$bus.$emit('message:push',
           `帳號或密碼錯誤，請重新登入

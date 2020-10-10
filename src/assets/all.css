@@ -43,6 +43,7 @@
 
 .main-area {
     min-height: 100%;
+    padding-bottom: 5rem;
 }
 
 .jumbotron {
@@ -75,6 +76,17 @@
     position: relative;
     width:80%;
     height:500px;
+}
+
+@media (max-width: 767.98px) {
+    .ag-image {
+        background-position: 50%;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        width:100%;
+        height:500px;
+    }
 }
 
 
@@ -120,6 +132,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    margin-top: 1.5rem;
     padding: 2.5rem 0;
     height: 150px;
     color: #4b4e3b;
@@ -245,7 +258,13 @@ text-transform: uppercase;
 }
 
 .productImage, .productInfo {
-    min-height: 530px;
+    height: 530px;
+}
+
+@media screen and (max-width: 768px) {
+    .productInfo {
+        height: 430px;
+    }
 }
 
 .productTitle, .productPrice {
@@ -253,7 +272,13 @@ text-transform: uppercase;
 }
 
 .productContent {
-    min-height: 300px;
+    height: 300px;
+}
+
+@media screen and (max-width: 768px) {
+    .productContent {
+        height: 150px;
+    }
 }
 
 .badge.custom-badge {
@@ -299,6 +324,14 @@ input[type=number] {
     background-color: #eeeee4ec
 }
 
+@media screen and (max-width: 768px) {
+    .sumTable {
+        background-color: #eeeee4ec;
+        width: 100%;
+    }
+}
+
+
 .orderInfo .col-header {
     height:40px
 }
@@ -312,9 +345,12 @@ input[type=number] {
     min-height: 80px;
 }
 .progressBarList {
+    margin-left: -40px;
     counter-reset: step;
 }
+
 .progressBarList li {
+    margin-left: 0px;
     list-style-type: none;
     width: 25%;
     float: left;
@@ -324,6 +360,9 @@ input[type=number] {
     text-transform: uppercase;
     color: #BDC0BA;
 }
+
+
+
 .progressBarList li:before {
     width: 30px;
     height: 30px;
@@ -353,11 +392,24 @@ input[type=number] {
 .progressBarList li.active {
     color: #737157;
 }
+
+.progressBarList li.progressEnd {
+    color: #20604F;
+}
+
+
 .progressBarList li.active:before {
     border-color: #737157;
 }
 .progressBarList li.active + li:after {
     background-color: #737157;
+}
+
+.progressBarList li.progressEnd:before {
+    border-color: #20604F;
+}
+.progressBarList li.progressEnd + li:after {
+    background-color: #20604F;
 }
 
 .noContentBox {
@@ -447,10 +499,22 @@ input[type=number] {
     position: absolute;
     top: 260px;
     width: 65%;
-    height: 32%;
+    height: 29%;
     object-fit: cover;
 
 }
+
+@media screen and (max-width: 768px) {
+    .centralPicture .aboutUsImg {
+        position: absolute;
+        top: 130px;
+        width: 100%;
+        height: 13%;
+        object-fit: cover;
+    }
+}
+
+
 
 .aboutUsInfo {
     min-height: 400px;
@@ -462,8 +526,9 @@ input[type=number] {
 }
 
 .centralPicture .text-wrap {
-    background-color: #9da094;
-    padding: 2rem 3rem;
+    border: solid 0.1rem #b9bbb4;
+    border-radius: 8px;
+    padding: 2rem 2rem;
     color: #383417;
 }
 

@@ -1,31 +1,29 @@
 <template>
-    <div>
-      <loading :active.sync="isLoading"></loading>
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-sm-10 align-self-center">
-            <div class="progressBar my-3">
-              <ul class="progressBarList">
-                <li class="active">確認購物車</li>
-                <li class="active">填寫訂購資料</li>
-                <li class="active">確認訂單並付款</li>
-                <li class="active">付款成功</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div  class="row d-flex justify-content-center">
-          <div class="col-12 align-self-center">
-                <h5 class="mb-5">訂購成功！感謝您的購買~</h5>
-                <div class="mb-4">
-                  <a href="#" @click.prevent="openModal(orderId)">查看訂單明細</a>
-                </div>
-                <router-link to="/products" class="btn btn-secondary">返回商品頁面</router-link>
-          </div>
+  <div class="main-area container">
+    <loading :active.sync="isLoading"></loading>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-10 align-self-center">
+        <div class="progressBar my-3">
+          <ul class="progressBarList">
+            <li class="progressEnd">確認購物車</li>
+            <li class="progressEnd">填寫訂購資料</li>
+            <li class="progressEnd">確認訂單並付款</li>
+            <li class="progressEnd">付款成功</li>
+          </ul>
         </div>
       </div>
+    </div>
+    <div  class="row d-flex justify-content-center">
+      <div class="col-12 align-self-center">
+            <h5 class="mb-5">訂購成功！感謝您的購買~</h5>
+            <div class="mb-4">
+              <a href="#" class="btn btn-outline-primary" @click.prevent="openModal(orderId)">查看訂單明細</a>
+            </div>
+            <router-link to="/products" class="btn btn-secondary">返回商品頁面</router-link>
+      </div>
+    </div>
     <!-- Modals -->
-    <!-- CouponInfo -->
+    <!-- OrderInfo -->
     <div class="modal" id="orderInfo" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -62,7 +60,7 @@
             </div>
             <hr>
             <div class="purchaseInfo row">
-              <div class="col-md-6">
+              <div class="col-lg-6">
                 <div class="mb-3">
                     <p class="font-weight-bold">訂購資訊</p>
                 </div>
@@ -100,7 +98,7 @@
                     </div>
                 </form>
               </div>
-              <div class="col-md-6">
+              <div class="col-lg-6">
                 <div class="mb-3">
                     <p class="font-weight-bold m-0">總金額</p>
                 </div>
@@ -110,18 +108,18 @@
                         <table class="table text-right text-primary">
                           <tbody>
                             <tr>
-                              <td scoped="col" class="border-top-0">
+                              <td scope="col" class="border-top-0">
                                 共 {{ quantityTatol }} 件商品
                               </td>
-                              <td scoped="col" class="border-top-0">商品金額</td>
-                              <td scoped="col" class="border-top-0">
+                              <td scope="col" class="border-top-0">商品金額</td>
+                              <td scope="col" class="border-top-0">
                                 NT{{ order.amount | currency }}
                               </td>
                             </tr>
                             <tr class="text-danger">
-                              <td scoped="col" class="border-top-0"></td>
-                              <td scoped="col" class="border-top-0">優惠券</td>
-                              <td scoped="col" class="border-top-0">
+                              <td scope="col" class="border-top-0"></td>
+                              <td scope="col" class="border-top-0">優惠券</td>
+                              <td scope="col" class="border-top-0">
                                 <span v-if="isEnabled">
                                   {{ order.coupon.title }}
                                 </span>
@@ -131,9 +129,9 @@
                               </td>
                             </tr>
                             <tr>
-                              <td scoped="col" class="border-top-0"></td>
-                              <td scoped="col" class="border-top-0">運費</td>
-                              <td scoped="col" class="border-top-0">
+                              <td scope="col" class="border-top-0"></td>
+                              <td scope="col" class="border-top-0">運費</td>
+                              <td scope="col" class="border-top-0">
                                 <span v-if="order.amount >= 999">
                                   NT{{ 0 | currency }}
                                   </span>
@@ -143,9 +141,9 @@
                               </td>
                             </tr>
                             <tr>
-                              <td scoped="col"></td>
-                              <td scoped="col">總計</td>
-                              <td scoped="col" class="text-danger">
+                              <td scope="col"></td>
+                              <td scope="col">總計</td>
+                              <td scope="col" class="text-danger">
                                 <span v-if="order.amount >= 999">
                                   NT{{ order.amount | currency }}
                                 </span>
@@ -168,8 +166,8 @@
         </div>
       </div>
     </div>
-    <!-- End CouponInfo -->
-    </div>
+    <!-- End OderInfo -->
+  </div>
 </template>
 
 <script>
