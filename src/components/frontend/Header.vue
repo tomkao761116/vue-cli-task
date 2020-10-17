@@ -1,51 +1,44 @@
 <template>
-  <div>
-    <div class="container">
-      <header class="blog-header">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4">
-          </div>
-          <div class="col-4 d-flex justify-content-center align-items-center">
-            <router-link to="/" class="blog-header-logo">
-              <picture>
-                <source media="(min-width: 768px)" srcset="../../assets/imgs/logo.png" />
-                <img class="img-responsive" src="../../assets/imgs/logo_sm.png" alt="Aiden's Garden">
-              </picture>
-            </router-link>
-          </div>
-          <div class="col-4 d-flex justify-content-end align-items-center">
-            <span data-toggle="tooltip" title="查看購物車">
-              <router-link to="/cart" class="p-2 ml-2 mr-2">
-                <i class="fas fa-shopping-cart fa-lg"></i>
-                <span v-if="cart!==0" class="badge custom-badge">
-                  {{ cart }}
-                </span>
-              </router-link>
-            </span>
-          </div>
-        </div>
-      </header>
-      <nav class="nav navbar-expand-md">
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="container">
+    <header class="blog-header">
+      <nav class="navbar navbar-expand-sm">
+        <div class="navbar-left text-right">
           <ul class="navbar-nav text-uppercase">
-            <li class="nav-item ag-item">
-              <router-link to="/" class="nav-link pl-4 pr-4 ml-3 mr-3">首頁</router-link>
+            <li class="nav-item ml-auto mr-auto">
+              <router-link to="/" class="nav-link font-weight-bold">首頁</router-link>
             </li>
-            <li class="nav-item ag-item">
-              <router-link to="/products" class="nav-link pl-4 pr-4 ml-3 mr-3">產品列表</router-link>
+            <li class="nav-item ml-auto mr-auto">
+              <router-link to="/products" class="nav-link font-weight-bold">產品列表</router-link>
             </li>
-            <li class="nav-item ag-item">
-              <router-link to="/about" class="nav-link pl-4 pr-4 ml-3 mr-3">關於我們</router-link>
+          </ul>
+        </div>
+        <div class="navbar-center text-center">
+          <router-link to="/" class="blog-header-logo">
+            <picture>
+              <source media="(min-width: 768px)" srcset="../../assets/imgs/logo.png" />
+              <img class="img-responsive" src="../../assets/imgs/logo_sm.png" alt="Aiden's Garden">
+            </picture>
+          </router-link>
+        </div>
+        <div class="navbar-right text-left">
+          <ul class="navbar-nav text-uppercase">
+            <li class="nav-item ml-auto mr-auto">
+              <router-link to="/about" class="nav-link font-weight-bold">關於我們</router-link>
+            </li>
+            <li class="nav-item ml-auto mr-auto">
+              <span data-toggle="tooltip" title="查看購物車">
+                <router-link to="/cart" class="nav-link">
+                  <i class="fas fa-shopping-cart fa-lg"></i>
+                  <span v-if="cart!==0" class="badge custom-badge">
+                    {{ cart }}
+                  </span>
+                </router-link>
+              </span>
             </li>
           </ul>
         </div>
       </nav>
-    </div>
+    </header>
   </div>
 </template>
 

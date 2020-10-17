@@ -3,16 +3,17 @@
     <loading :active.sync="isLoading"></loading>
       <div class="container">
         <main role="main" class="my-4">
-          <section class="centralPicture row justify-content-start align-items-center pb-3">
+          <section class="centralPicture row justify-content-start align-items-center pb-5">
             <!-- 中央大圖 -->
-            <img class="aboutUsImg" src="../../assets/imgs/aboutUsImg.jpg" alt="Mobirise">
             <div class="container">
               <div class="row justify-content-md-end">
-                <div class="col-lg-6 col-md-12">
-                  <h2 class="align-right pb-4 pr-4 display-1">
-                    <div class="text-left">Aiden's</div>
-                    <div class="text-right">Garden</div>
-                  </h2>
+                <div class="col-lg-6 col-md-12 aboutUsImg mb-3">
+                    <h3 class="align-right mt-2 display-1">
+                      <div class="text-left">Aiden's</div>
+                      <div class="text-right">Garden</div>
+                    </h3>
+                </div>
+                <div class="col-lg-6 col-md-12 mb-3">
                   <div class="text-wrap text-left">
                     <h5 class="pb-2 align-start display-5">「植物也可以是人類最忠實的朋友」</h5>
                     <h5 class="pb-2 pr-3 text-right display-5"> ─ By Aiden</h5>
@@ -24,10 +25,9 @@
               </div>
             </div>
           </section>
-          <div class="my-5"></div>
-          <section class="aboutUsInfo row justify-content-center align-items-center pt-3">
+          <section class="aboutUsInfo row justify-content-center align-items-center pt-5">
             <!-- 左邊聯絡資訊 -->
-            <div id="contactUs" class="col-md-6">
+            <div class="contactUs col-lg-6 col-md-12">
               <div class="contactUs p-5  text-left">
                 <h5 class="text-center">聯絡我們</h5>
                 <hr>
@@ -47,7 +47,7 @@
                 </ul>
               </div>
             </div>
-            <div id="findUs" class="col-md-6 p-3">
+            <div class="findUs col-lg-6 col-md-12 p-3">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d903.7597095552563!2d121.50803282920387!3d25.032755998998304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDAxJzU3LjkiTiAxMjHCsDMwJzMwLjkiRQ!5e0!3m2!1szh-TW!2stw!4v1598881043974!5m2!1szh-TW!2stw" width="400" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
           </section>
