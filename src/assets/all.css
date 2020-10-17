@@ -58,8 +58,8 @@
 }
 
 .jumbotron-image {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
+    padding: 1rem 1rem;
+    margin-bottom: 5rem;
     background-image: url(../assets/imgs/main_image.jpg);
     background-position: center;
     background-repeat: no-repeat;
