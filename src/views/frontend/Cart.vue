@@ -3,15 +3,25 @@
     <loading :active.sync="isLoading"></loading>
     <div class="row justify-content-center align-items-center">
       <div class="col-sm-10 align-self-center">
-        <div class="progressBar my-3">
-          <ul class="progressBarList">
-            <li class="active">確認購物車</li>
-            <li>填寫訂購資料</li>
-            <li>確認訂單並付款</li>
-            <li>付款成功</li>
-          </ul>
-        </div>
-        <div calss="cartContent" v-if="carts.length > 0">
+        <ul class="progress-indicator my-5">
+          <li class="active">
+              <span class="bubble"></span>
+              <small>確認購物車</small>
+          </li>
+          <li >
+              <span class="bubble"></span>
+              <small>填寫訂購資料</small>
+          </li>
+          <li>
+              <span class="bubble"></span>
+              <small>確認付款</small>
+          </li>
+          <li>
+              <span class="bubble"></span>
+              <small>訂單建立完成</small>
+          </li>
+        </ul>
+        <div class="cartContent" v-if="carts.length > 0">
           <div class="cartTable border">
             <div class="row d-flex justify-content-end ">
               <div class="col-md-4 col-sm-6 col-header d-flex justify-content-end align-items-center">
@@ -110,7 +120,7 @@
           </div>
         </div>
 
-        <div class="noCartContent row d-flex justify-content-center align-items-center mt-3" v-else>
+        <div class="noCartContent row d-flex justify-content-center align-items-center" v-else>
           <div class="col-12 noContentBox align-self-center">
             <h5 class="mb-5">您的購物車目前是空的喔，趕快去挑選幾位盆栽好朋友吧！</h5>
             <router-link to="/products" class="btn btn-secondary">繼續購物</router-link>

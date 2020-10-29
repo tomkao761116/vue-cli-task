@@ -3,23 +3,37 @@
     <loading :active.sync="isLoading"></loading>
     <div class="row justify-content-center align-items-center">
       <div class="col-sm-10 align-self-center">
-        <div class="progressBar my-3">
-          <ul class="progressBarList">
-            <li class="progressEnd">確認購物車</li>
-            <li class="progressEnd">填寫訂購資料</li>
-            <li class="progressEnd">確認訂單並付款</li>
-            <li class="progressEnd">付款成功</li>
-          </ul>
+        <ul class="progress-indicator my-5">
+          <li class="completed">
+              <span class="bubble"></span>
+              <i class="fa fa-check-circle mr-1"></i>
+              <small>確認購物車</small>
+          </li>
+          <li class="completed">
+              <span class="bubble"></span>
+              <i class="fa fa-check-circle mr-1"></i>
+              <small>填寫訂購資料</small>
+          </li>
+          <li class="completed">
+              <span class="bubble"></span>
+              <i class="fa fa-check-circle mr-1"></i>
+              <small>確認付款</small>
+          </li>
+          <li class="completed">
+              <span class="bubble"></span>
+              <i class="fa fa-check-circle mr-1"></i>
+              <small>訂單建立完成</small>
+          </li>
+        </ul>
+        <div class="cartContent">
+          <div class="col-12 align-self-center">
+          <h5 class="mb-5">訂購成功！感謝您的購買~</h5>
+          <div class="mb-4">
+            <a href="#" class="btn btn-outline-primary" @click.prevent="openModal(orderId)">查看訂單明細</a>
+          </div>
+          <router-link to="/products" class="btn btn-secondary">返回商品頁面</router-link>
         </div>
-      </div>
-    </div>
-    <div  class="row d-flex justify-content-center">
-      <div class="col-12 align-self-center">
-            <h5 class="mb-5">訂購成功！感謝您的購買~</h5>
-            <div class="mb-4">
-              <a href="#" class="btn btn-outline-primary" @click.prevent="openModal(orderId)">查看訂單明細</a>
-            </div>
-            <router-link to="/products" class="btn btn-secondary">返回商品頁面</router-link>
+        </div>
       </div>
     </div>
     <!-- Modals -->

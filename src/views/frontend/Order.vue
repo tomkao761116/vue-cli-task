@@ -3,15 +3,26 @@
     <loading :active.sync="isLoading"></loading>
     <div class="row justify-content-center align-items-center">
       <div class="col-sm-10 align-self-center">
-        <div class="progressBar my-3">
-          <ul class="progressBarList">
-            <li class="active">確認購物車</li>
-            <li class="active">填寫訂購資料</li>
-            <li>確認訂單並付款</li>
-            <li>付款成功</li>
-          </ul>
-        </div>
-        <validation-observer v-slot = "{invalid}" >
+        <ul class="progress-indicator my-5">
+          <li class="completed">
+              <span class="bubble"></span>
+              <i class="fa fa-check-circle mr-1"></i>
+              <small>確認購物車</small>
+          </li>
+          <li class="active">
+              <span class="bubble"></span>
+              <small>填寫訂購資料</small>
+          </li>
+          <li>
+              <span class="bubble"></span>
+              <small>確認付款</small>
+          </li>
+          <li>
+              <span class="bubble"></span>
+              <small>訂單建立完成</small>
+          </li>
+        </ul>
+        <validation-observer v-slot = "{invalid}" class="cartContent" >
           <form @submit.prevent="createOrder" class="text-left">
             <div class="row">
               <!-- 填寫訂購資訊 -->

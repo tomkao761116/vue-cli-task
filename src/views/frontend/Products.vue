@@ -1,7 +1,7 @@
 <template>
   <div class="main-area container">
     <loading :active.sync="isLoading"></loading>
-    <main role="main" class="mt-5">
+    <main role="main">
       <!-- 商品列表 -->
         <div class="row position-relative">
           <nav class="typeSideBar col-md-3 mb-5">
@@ -43,12 +43,12 @@
             </ul>
           </nav>
           <div class="productsList col-md-9">
-            <h4 class="dispaly-5 text-left" v-if="filterType === ''">
+            <h1 class="h3 text-left" v-if="filterType === ''">
               全部商品
-            </h4>
-            <h4 class="dispaly-5 text-left" v-else>
+            </h1>
+            <h1 class="h3 text-left" v-else>
               {{ filterType }}
-            </h4>
+            </h1>
             <hr>
             <div class="row justify-content-start">
               <!-- 單項商品 Card -->
@@ -61,11 +61,11 @@
                         <div class="hoverText">查看商品</div>
                       </div>
                     <div class="card-body">
-                      <h6 class="productTitle text-left font-weight-bold">{{ item.title }}</h6>
+                      <h2 class="h6 productTitle text-left font-weight-bold">{{ item.title }}</h2>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="price-group">
-                          <h6 class="orignal-price text-muted mr-1"><small >NT{{ item.origin_price | currency }}</small></h6>
-                          <h6 class="activity-price">NT{{ item.price | currency }}</h6>
+                          <h3 class="h6 orignal-price text-muted mr-1"><small >NT{{ item.origin_price | currency }}</small></h3>
+                          <h3 class="h6 activity-price">NT{{ item.price | currency }}</h3>
                         </div>
                         <div class="action-group">
                           <span data-toggle="tooltip" title="加入購物車">

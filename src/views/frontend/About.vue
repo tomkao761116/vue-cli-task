@@ -2,16 +2,16 @@
   <div class="main-area">
     <loading :active.sync="isLoading"></loading>
       <div class="container">
-        <main role="main" class="my-4">
+        <main role="main">
           <section class="centralPicture row justify-content-start align-items-center pb-5">
             <!-- 中央大圖 -->
             <div class="container">
               <div class="row justify-content-md-end">
                 <div class="col-lg-6 col-md-12 aboutUsImg mb-3">
-                    <h3 class="align-right mt-2 display-1">
+                    <h1 class="align-right mt-2 display-2 p-3">
                       <div class="text-left">Aiden's</div>
                       <div class="text-right">Garden</div>
-                    </h3>
+                    </h1>
                 </div>
                 <div class="col-lg-6 col-md-12 mb-3">
                   <div class="text-wrap text-left">

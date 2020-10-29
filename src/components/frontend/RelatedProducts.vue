@@ -14,7 +14,7 @@
                 <div class="hoverText">查看商品</div>
             </div>
             <div class="card-body">
-              <p class="productTitle text-left text-sensaicha font-weight-bold">{{ item.title }}</p>
+              <h3 class="productTitle h6 text-left font-weight-bold">{{ item.title }}</h3>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="price-group">
                   <small class="orignal-price text-muted mr-1">NT<span>{{ item.origin_price | currency }}</span></small>

@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <main role="main" class="mt-5">
+    <main role="main">
       <section class="centralPicture">
         <!-- 中央大圖 -->
-        <div class="jumbotron jumbotron-image row justify-content-center align-items-center">
-          <div class="col-md-8 align-self-center">
+        <div class="jumbotron jumbotron-image row justify-content-center align-items-start">
+          <div class="col-md-8 align-self-start jumbotron-text">
             <div class="px-4">
-              <h2 class="mt-2 font-weight-bold">在繁忙的日常中，尋找片刻的寧靜</h2>
-            <p class="display-5 my-3 px-4">擁有一盆多肉，為自己的心靈灌溉。從成堆的事務暫時抽離，拔除名為"煩惱"的雜草。讓心情平和、沉澱，找回遠離已久，平靜的自我。</p>
+              <h2 class="font-weight-bold">在繁忙的日常中，尋找片刻的寧靜</h2>
+            <p class="display-5 my-3 px-4 font-weight-bold">擁有一盆多肉，為自己的心靈灌溉。從成堆的事務暫時抽離，拔除名為"煩惱"的雜草。讓心情平和、沉澱，找回遠離已久，平靜的自我。</p>
             <div class="text-center mt-4">
-              <router-link to="/products"><h5 class="d-inline">找尋心靈之友 >></h5></router-link>
+              <router-link to="/products"><h5 class="d-inline font-weight-bold">找尋心靈之友 >></h5></router-link>
             </div>
             </div>
           </div>
@@ -21,11 +21,11 @@
             <img src="../../assets/imgs/daniel-oberg.jpg" alt="picture" media-simple="true" class="rounded py-2" width="80%" height="80%">
           </div>
           <div class="media-content col-md-6 align-self-center">
-            <div class="px-5 py-2">
+            <div class="px-2 py-2">
               <h3 class="pb-3 display-6"><span class="badge">溫<span class="ml-4">暖</span></span></h3>
               <div class="text-muted">
                 <p class="mb-1">
-                  在繁忙的辦公環境，堆滿文件的辦公桌面上，
+                  在繁忙的辦公環境，堆滿文件的辦公桌上，
                 </p>
                 <p class="mb-1">
                   建立起自己的植感小天地。
@@ -47,7 +47,7 @@
                   迎接忙碌了一天，終於回到住處的你。
                 </p>
                 <p class="mb-1">
-                  陪伴你度過一個個，不想一個人度過的夜晚，
+                  陪伴你度過每個，不想一個人度過的夜晚，
                 </p>
                 <p class="mb-1">
                   靜靜的聽你說說話，找回最真實的自己。
