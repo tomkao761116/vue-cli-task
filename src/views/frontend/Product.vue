@@ -1,7 +1,7 @@
 <template>
   <div class="main-area container">
     <loading :active.sync="isLoading"></loading>
-    <main role="main" class="py-5">
+    <main role="main">
       <div class="row d-flex justify-content-start align-items-center">
         <div class="productImage col-md-6 align-self-center">
           <div class="ag-image  text-center"  :style="{ backgroundImage:`url(${ product.imageUrl[0] })` }"></div>
@@ -47,9 +47,9 @@
       </div>
       <hr>
       <div class="productDescription row d-flex justify-content-start align-items-center">
-        <div class="col-sm-12  mt-4 mb-4">
+        <div class="col-sm-12 mt-4 mb-4 pl-4">
           <div class="form-group row text-left">
-            <h2 for="content" class="h5col-sm-3 col-form-label text-muted"><strong>商品描述</strong></h2>
+            <h2 for="content" class="h5 col-sm-3 col-form-label text-muted"><strong>商品描述</strong></h2>
             <div id="content" class="col-sm-9">
               <p>
                 「盆栽」均為組合商品，包含一標準花器</p>

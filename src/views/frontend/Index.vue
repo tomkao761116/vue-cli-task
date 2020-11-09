@@ -3,13 +3,13 @@
     <main role="main">
       <section class="centralPicture">
         <!-- 中央大圖 -->
-        <div class="jumbotron jumbotron-image row justify-content-center align-items-start">
-          <div class="col-md-8 align-self-start jumbotron-text">
+        <div class="jumbotron jumbotron-image row justify-content-start align-items-center">
+          <div class="col-md-8 align-self-center jumbotron-text">
             <div class="px-4">
-              <h2 class="font-weight-bold">在繁忙的日常中，尋找片刻的寧靜</h2>
-            <p class="display-5 my-3 px-4 font-weight-bold">擁有一盆多肉，為自己的心靈灌溉。從成堆的事務暫時抽離，拔除名為"煩惱"的雜草。讓心情平和、沉澱，找回遠離已久，平靜的自我。</p>
-            <div class="text-center mt-4">
-              <router-link to="/products"><h5 class="d-inline font-weight-bold">找尋心靈之友 >></h5></router-link>
+              <h2 class="jumbotron-title font-weight-bold">從繁忙日常中，尋找片刻寧靜</h2>
+            <p class="jumbotron-content display-5 my-3 font-weight-bold">擁有一盆多肉，為自己的心靈灌溉。<br>從成堆的事務暫時抽離，拔除名為"煩惱"的雜草。<br>讓心情平和、沉澱，找回遠離已久，平靜的自我。</p>
+            <div class="text-left mt-4">
+              <router-link to="/products"><h5 class="jumbotron-button d-inline font-weight-bold">找尋心靈之友 >></h5></router-link>
             </div>
             </div>
           </div>
