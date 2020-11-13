@@ -32,6 +32,7 @@ import currencyFilter from './filters/currency'
 import dateFilter from './filters/date'
 
 import '../src/assets/all.css'
+import '../src/assets/stepProgressbar.scss'
 
 window.$ = jquery
 

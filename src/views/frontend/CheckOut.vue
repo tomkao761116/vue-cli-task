@@ -3,24 +3,18 @@
     <loading :active.sync="isLoading"></loading>
     <div class="row justify-content-center align-items-center">
       <div class="col-sm-10 align-self-center">
-        <ul class="progress-indicator my-5">
-          <li class="completed">
-              <span class="bubble"></span>
-              <i class="fa fa-check-circle mr-1"></i>
-              <small>確認購物車</small>
+        <ul class="step-progressbar py-3">
+          <li class="step-progressbar__item step-progressbar__item--complete">
+            <small>確認購物車</small>
           </li>
-          <li class="completed">
-              <span class="bubble"></span>
-              <i class="fa fa-check-circle mr-1"></i>
-              <small>填寫訂購資料</small>
+          <li class="step-progressbar__item step-progressbar__item--complete">
+            <small>填寫資料</small>
           </li>
-          <li class="active">
-              <span class="bubble"></span>
-              <small>確認付款</small>
+          <li class="step-progressbar__item step-progressbar__item--active">
+            <small>確認付款</small>
           </li>
-          <li>
-              <span class="bubble"></span>
-              <small>訂單建立完成</small>
+          <li class="step-progressbar__item">
+            <small>訂購完成</small>
           </li>
         </ul>
         <div class="cartContent text-center">
